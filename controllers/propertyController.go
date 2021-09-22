@@ -8,7 +8,7 @@ import (
 	"github.com/labstack/echo"
 )
 
-func GetAllpropertiesController(c echo.Context) error {
+func GetAllPropertiesController(c echo.Context) error {
 	properties := database.GetProperties()
 	return c.JSON(http.StatusOK, echo.Map{
 		"message": "GetAllpropertysController",

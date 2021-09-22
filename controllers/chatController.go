@@ -25,7 +25,7 @@ func GetChatByIDController(c echo.Context) error {
 	})
 }
 
-func DeletechatByIDController(c echo.Context) error {
+func DeleteChatByIDController(c echo.Context) error {
 	id := c.Param("id")
 	database.DeleteChatByID(id)
 	return c.JSON(http.StatusOK, echo.Map{
@@ -50,7 +50,7 @@ func UpdateChatByIDController(c echo.Context) error {
 	})
 }
 
-func CreatechatController(c echo.Context) error {
+func CreateChatController(c echo.Context) error {
 	var newchat model.Chat
 	if err := c.Bind(&newchat); err != nil {
 		return c.JSON(http.StatusOK, echo.Map{
