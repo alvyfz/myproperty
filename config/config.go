@@ -35,5 +35,5 @@ func InitDB() {
 }
 
 func InitMigrate() {
-	DB.AutoMigrate(&model.User{}, &model.Wishlist{}, &model.Chat{}, &model.Developer{}, &model.PropertyType{}, &model.Property{}, &model.Transaction{})
+	DB.AutoMigrate(&model.User{}, &model.Chat{}, &model.Developer{}, &model.PropertyType{}, &model.Property{}, &model.Transaction{})
 }

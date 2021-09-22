@@ -8,6 +8,6 @@ type Developer struct {
 	Name        string `json:"name"`
 	Description string `json:"description"`
 	City        string `json:"city"`
-	UserId      uint   `json:"user_id"`
+	UserID      uint   `json:"user_id"`
 	User        *User  `json:"user,omitempty"`
 }

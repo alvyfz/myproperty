@@ -7,13 +7,13 @@ import (
 
 func GetDevelopers() []model.Developer {
 	var developers []model.Developer
-	config.DB.Find(&developers)
+	config.DB.Preload("User").Find(&developers)
 	return developers
 }
 
 func GetDeveloperByID(id string) model.Developer {
 	var developer model.Developer
-	config.DB.Where("id = ?", id).Find(&developer)
+	config.DB.Where("id = ?", id).Preload("User").Find(&developer)
 	return developer
 }
 

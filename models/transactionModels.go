@@ -7,6 +7,6 @@ type Transaction struct {
 	ID         uint      `json:"id"`
 	UserID     uint      `json:"user_id"`
 	User       *User     `json:"user"`
-	PropertyId uint      `json:"property_id,"`
+	PropertyID uint      `json:"property_id,"`
 	Property   *Property `json:"property,omitempty"`
 }

@@ -7,6 +7,6 @@ type Wishlist struct {
 	ID         uint      `json:"id"`
 	UserId     uint      `json:"user_id"`
 	User       *User     `json:"user"`
-	PropertyId uint      `json:"property_id"`
+	PropertyID uint      `json:"property_id"`
 	Property   *Property `json:"property"`
 }

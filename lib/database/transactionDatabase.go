@@ -7,13 +7,13 @@ import (
 
 func GetTransactions() []model.Transaction {
 	var transactions []model.Transaction
-	config.DB.Find(&transactions)
+	config.DB.Preload("User", "Property").Find(&transactions)
 	return transactions
 }
 
 func GetTransactionByID(id string) model.Transaction {
 	var transaction model.Transaction
-	config.DB.Where("id = ?", id).Find(&transaction)
+	config.DB.Where("id = ?", id).Preload("User", "Property").Find(&transaction)
 	return transaction
 }
 

@@ -7,13 +7,13 @@ import (
 
 func GetProperties() []model.Property {
 	var properties []model.Property
-	config.DB.Find(&properties)
+	config.DB.Preload("PropertyType", "Developer").Find(&properties)
 	return properties
 }
 
 func GetPropertyByID(id string) model.Property {
 	var property model.Property
-	config.DB.Where("id = ?", id).Find(&property)
+	config.DB.Where("id = ?", id).Preload("PropertyType", "Developer").Find(&property)
 	return property
 }
 
