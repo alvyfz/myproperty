@@ -9,5 +9,5 @@ type Developer struct {
 	Description string `json:"description"`
 	City        string `json:"city"`
 	UserId      uint   `json:"user_id"`
-	User        *User  `json:"user"`
+	User        *User  `json:"user,omitempty"`
 }

@@ -17,7 +17,9 @@ type Property struct {
 	PropertyTypeID uint          `json:"property_type_id"`
 	PropertyType   *PropertyType `json:"property_type"`
 	UserID         uint          `json:"user_id"`
-	User           *User         `json:"user"`
+	User           *User         `json:"user,omitempty"`
 	DeveloperID    uint          `json:"developer_id"`
-	Developer      *Developer    `json:"developer"`
+	Developer      *Developer    `json:"developer,omitempty"`
+	WishlistId     uint64        `json:"wishlist_id"`
+	Wishlist       *Wishlist     `json:"wishlist,omitempty"`
 }
