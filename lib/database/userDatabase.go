@@ -7,13 +7,13 @@ import (
 
 func GetUsers() []model.User {
 	var users []model.User
-	config.DB.Find(&users)
+	config.DB.Preload("Wishlist").Find(&users)
 	return users
 }
 
 func GetUserByID(id string) model.User {
 	var user model.User
-	config.DB.Where("id = ?", id).Find(&user)
+	config.DB.Where("id = ?", id).Preload("Wishlist").Find(&user)
 	return user
 }
 

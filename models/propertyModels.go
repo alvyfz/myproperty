@@ -20,6 +20,5 @@ type Property struct {
 	User           *User         `json:"user,omitempty"`
 	DeveloperID    uint          `json:"developer_id"`
 	Developer      *Developer    `json:"developer,omitempty"`
-	// WishlistID     uint64        `json:"wishlist_id"`
-	// Wishlist       *Wishlist     `json:"wishlist,omitempty"`
+
 }

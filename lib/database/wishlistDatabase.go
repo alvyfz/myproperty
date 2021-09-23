@@ -7,13 +7,13 @@ import (
 
 func GetWishlists() []model.Wishlist {
 	var wishlists []model.Wishlist
-	config.DB.Find(&wishlists)
+	config.DB.Preload("User", "Property").Find(&wishlists)
 	return wishlists
 }
 
 func GetWishlistByID(id string) model.Wishlist {
 	var wishlist model.Wishlist
-	config.DB.Where("id = ?", id).Find(&wishlist)
+	config.DB.Where("id = ?", id).Preload("User", "Property").Find(&wishlist)
 	return wishlist
 }
 

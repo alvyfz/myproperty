@@ -11,6 +11,6 @@ type User struct {
 	PhoneNumber string `json:"phone_number"`
 	Gender      string `json:"gender"`
 	City        string `json:"city"`
-	// WishlistID  uint64    `json:"wishlist_id"`
-	// Wishlist    *Wishlist `json:"wishlist,omitempty"`
+	WishlistID  uint64    `json:"wishlist_id"`
+	Wishlist    *Wishlist `json:"wishlist,omitempty"`
 }
