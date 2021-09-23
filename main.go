@@ -9,6 +9,7 @@ import (
 func main() {
 	config.InitDB()
 	e := routes.New()
+	e.Group("/jwt")
 	m.LogMiddlewares(e)
 	e.Logger.Fatal(e.Start(":8080"))
 }

@@ -1,9 +1,11 @@
 package routes
 
 import (
+	"myproperty-api/constants"
 	"myproperty-api/controllers"
 
 	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 )
 
 func New() *echo.Echo {
@@ -15,6 +17,7 @@ func New() *echo.Echo {
 	e.GET("/users/:id", controllers.GetUserByIDController)
 	e.DELETE("/users/:id", controllers.DeleteUserByIDController)
 	e.PUT("/users/:id", controllers.UpdateUserByIDController)
+	e.POST("/login", controllers.LoginUsersController)
 	//
 	// Developer routes
 	e.GET("/developers", controllers.GetAllDeveloperController)
@@ -57,6 +60,11 @@ func New() *echo.Echo {
 	e.GET("/property-type/:id", controllers.GetPropertyTypeByIDController)
 	e.DELETE("/property-type/:id", controllers.DeletePropertyTypeByIDController)
 	e.PUT("/property-type/:id", controllers.UpdatePropertyTypeByIDController)
+	//
+	// JWT Group
+	r := e.Group("/jwt")
+	r.Use(middleware.JWT([]byte(constants.SECRET_JWT)))
+	r.GET("/users/:id", controllers.GetDetailControllers)
 
 	return e
 }
